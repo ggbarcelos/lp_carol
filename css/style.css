@@ -74,7 +74,7 @@ header { position: sticky; top: 0; z-index: 1020; }
 .brand {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 24px;
   font-weight: 700;
   font-size: 14px;
   letter-spacing: 0.1em;
@@ -82,14 +82,22 @@ header { position: sticky; top: 0; z-index: 1020; }
   white-space: nowrap;
   flex-shrink: 0;
 }
+.navbar-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--lilac);
+  display: none;
+}
 .logo-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 85px;
-  height: 85px;
+  width: 75px;
+  height: 75px;
   background: transparent;
-  overflow: hidden;
+  overflow: visible;
   flex-shrink: 0;
   transition: var(--transition);
 }
@@ -97,7 +105,7 @@ header { position: sticky; top: 0; z-index: 1020; }
   transform: scale(1.05);
 }
 .navbar-logo {
-  height: 80px;
+  height: 70px;
   width: auto;
   border-radius: 8px;
   object-fit: cover;
@@ -200,11 +208,11 @@ header .cta-nav {
 .hero {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 100px 20px 60px;
+  padding: 120px 20px 80px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: flex-start;
+  gap: 100px;
+  align-items: center;
   position: relative;
 }
 .hero-content {
@@ -233,9 +241,9 @@ header .cta-nav {
 }
 h1 {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(40px, 6vw, 60px);
+  font-size: clamp(44px, 6.5vw, 64px);
   margin: 0;
-  line-height: 1.15;
+  line-height: 1.2;
   font-weight: 700;
   letter-spacing: -0.02em;
   background: linear-gradient(135deg, var(--lilac) 0%, var(--lilac-dark) 50%, var(--lilac) 100%);
@@ -266,9 +274,10 @@ h2 {
 .hero-subtitle {
   margin: 0 !important;
   color: var(--text-secondary) !important;
-  font-size: 17px !important;
+  font-size: 18px !important;
   line-height: 1.8 !important;
   font-weight: 400 !important;
+  letter-spacing: 0.3px !important;
 }
 .hero-actions { 
   display: flex; 
@@ -346,19 +355,33 @@ h2 {
 .hero-visual {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 32px;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
+  padding-left: 20px;
 }
 .avatar-container {
   position: relative;
-  width: 100%;
-  max-width: 380px;
+  width: 100%420px;
   aspect-ratio: 1;
   margin: 0 auto;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 40px 0
+  justify-content: center;
+}
+.avatar-label {
+  font-family:4px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--lilac);
+  margin-bottom: 24px;
+  text-align: center;
+  opacity: 0.85x;
+  text-align: center;
 }
 .avatar-glow {
   position: absolute;
@@ -413,10 +436,13 @@ h2 {
   display: none;
 }
 .tagline { 
-  margin: 0;
-  padding: 0 20px;
-  text-align: center;
-  font-size: 16px;
+  margin: 0;7px;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--lilac);
+  line-height: 1.8;
+  letter-spacing: 0.2px;
+  max-width: 350px
   font-style: italic;
   color: var(--lilac);
   line-height: 1.6;
@@ -1311,6 +1337,9 @@ html { scroll-behavior: smooth; }
   }
 }
 @media (max-width: 768px) {
+  .navbar-title {
+    display: none !important;
+  }
   .navbar-toggler {
     display: flex !important;
   }
@@ -1367,8 +1396,9 @@ html { scroll-behavior: smooth; }
   }
   .hero { 
     grid-template-columns: 1fr;
-    padding: 60px 20px 40px;
-    gap: 40px;
+    padding: 70px 20px 50px;
+    gap: 50px;
+    align-items: center;
   }
   .hero-steps {
     grid-template-columns: 1fr;
@@ -1378,7 +1408,7 @@ html { scroll-behavior: smooth; }
     gap: 14px;
   }
   .avatar-container {
-    max-width: 300px;
+    max-width: 340px;
   }
   .video-container iframe {
     height: 300px !important;
@@ -1459,5 +1489,11 @@ html { scroll-behavior: smooth; }
   .floating-cta {
     font-size: 12px;
     padding: 12px 16px;
+  }
+}
+
+@media (min-width: 769px) {
+  .navbar-title {
+    display: block !important;
   }
 }
