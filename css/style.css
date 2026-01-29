@@ -362,53 +362,62 @@ h2 {
 }
 .avatar-container {
   position: relative;
-  width: 100%420px;
-  aspect-ratio: 1;
+  width: min(360px, 80vw);
+  height: min(360px, 80vw);
   margin: 0 auto;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 40px 0
-  justify-content: center;
+  padding: 0;
+  isolation: isolate;
 }
 .avatar-label {
-  font-family:4px;
+  font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
   font-weight: 600;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--lilac);
-  margin-bottom: 24px;
+  color: var(--lilac-dark);
+  position: absolute;
+  top: -28px;
+  left: 50%;
+  transform: translateX(-50%);
   text-align: center;
-  opacity: 0.85x;
-  text-align: center;
+  opacity: 0.85;
+  background: rgba(255, 255, 255, 0.75);
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(201, 166, 212, 0.2);
+  box-shadow: 0 6px 16px rgba(201, 166, 212, 0.12);
 }
 .avatar-glow {
   position: absolute;
-  inset: -20px;
+  inset: -28px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(201, 166, 212, 0.25), rgba(201, 166, 212, 0.05) 70%);
-  filter: blur(30px);
+  background: radial-gradient(circle, rgba(201, 166, 212, 0.35), rgba(201, 166, 212, 0.08) 70%);
+  filter: blur(34px);
   animation: pulse 4s ease-in-out infinite;
   z-index: 0;
 }
 .avatar-ring {
   position: absolute;
-  inset: -8px;
+  inset: -10px;
   border-radius: 50%;
-  border: 2px solid var(--lilac);
-  box-shadow: 0 0 20px rgba(201, 166, 212, 0.3), inset 0 0 20px rgba(201, 166, 212, 0.1);
+  border: 2px solid rgba(201, 166, 212, 0.7);
+  box-shadow: 0 0 28px rgba(201, 166, 212, 0.35), inset 0 0 18px rgba(201, 166, 212, 0.12);
   z-index: 1;
 }
 .avatar {
-  position: relative;
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
   object-position: center;
-  box-shadow: 0 20px 60px rgba(201, 166, 212, 0.3), 0 0 0 12px rgba(255, 255, 255, 0.8);
-  border: 3px solid #ffffff;
+  display: block;
+  overflow: hidden;
+  box-shadow: 0 22px 70px rgba(201, 166, 212, 0.32), 0 0 0 10px rgba(255, 255, 255, 0.85);
+  border: 4px solid #ffffff;
   transition: var(--transition-smooth);
   z-index: 2;
 }
