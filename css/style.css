@@ -926,9 +926,11 @@ section { padding: 50px 20px; }
   border: 1px solid var(--border);
   border-left: 4px solid var(--accent);
   border-radius: 12px;
-  transition: var(--transition-smooth);\n  overflow: hidden;
+  transition: var(--transition-smooth);
+  overflow: hidden;
   display: flex;
   flex-direction: column;
+  min-height: 180px;
 }
 .quote::before {
   content: '';
@@ -960,10 +962,11 @@ section { padding: 50px 20px; }
   opacity: 0.25;
 }
 .quote p {
-  margin: 0 0 14px;
+  margin: 0;
   font-size: 15px;
   line-height: 1.7;
   color: var(--text);
+  flex: 1;
 }
 .quote small {
   display: block;
@@ -974,7 +977,8 @@ section { padding: 50px 20px; }
 .quote-footer {
   display: inline-flex;
   gap: 4px;
-  margin-top: 10px;
+  margin-top: auto;
+  padding-top: 16px;
   color: var(--rose-dark);
 }
 .quote-footer .bi-star-fill {
