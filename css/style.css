@@ -1155,6 +1155,40 @@ section { padding: 50px 20px; }
 .footer-inner small {
   font-size: 12px;
 }
+.footer-developer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid var(--border-light);
+}
+.developer-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 500;
+  transition: var(--transition);
+  opacity: 0.8;
+}
+.developer-link:hover {
+  opacity: 1;
+  color: var(--text-secondary);
+  transform: translateY(-2px);
+}
+.developer-logo {
+  height: 24px;
+  width: auto;
+  filter: grayscale(20%);
+  transition: var(--transition);
+}
+.developer-link:hover .developer-logo {
+  filter: grayscale(0%);
+}
 .floating-cta {
   position: fixed;
   bottom: 24px;
