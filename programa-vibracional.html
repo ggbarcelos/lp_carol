@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programa de Reprogramação Vibracional - 30 Dias de Transformação | Carol Fontanella</title>
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Programa de Reprogramação Vibracional - Transforme sua energia em 30 dias">
+  <meta property="og:description" content="Jornada profunda de reprogramação vibracional através de áudios terapêuticos. Eleve sua frequência, cultive gratidão e desperte uma nova versão de si mesma.">
+  <meta property="og:image" content="./img/img1.jpg">
+  
+  <meta name="description" content="Programa de 30 dias para transformar sua vibração através de áudios terapêuticos quânticos. Realinhe sua energia, desenvolva gratidão e eleve sua consciência com Carol Fontanella.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  
+  <style>
+    :root {
+      --primary: #c9a6d4;
+      --primary-dark: #a583b3;
+      --primary-light: #e6d9ec;
+      --secondary: #8b7ba8;
+      --accent: #d4a6c9;
+      --text: #2d2d3a;
+      --muted: #6b6b7d;
+      --bg: #fdfbff;
+      --bg-alt: #f8f5fc;
+      --surface: #ffffff;
+      --gradient-1: linear-gradient(135deg, #e6d9ec 0%, #c9a6d4 100%);
+      --gradient-2: linear-gradient(135deg, #c9a6d4 0%, #8b7ba8 100%);
+      --shadow-soft: 0 10px 40px rgba(201, 166, 212, 0.15);
+      --shadow-medium: 0 15px 50px rgba(201, 166, 212, 0.25);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      line-height: 1.2;
+      font-weight: 700;
+    }
+    
+    /* Animated Background */
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      33% { transform: translateY(-20px) rotate(5deg); }
+      66% { transform: translateY(-10px) rotate(-5deg); }
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 0.4; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(1.1); }
+    }
+    
+    /* Hero Section - Enhanced */
+    .hero-landing {
+      min-height: 100vh;
+      background: var(--gradient-1);
+      padding: 100px 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .hero-landing::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: pulse 8s ease-in-out infinite;
+    }
+    
+    .hero-landing::after {
+      content: '';
+      position: absolute;
+      bottom: -25%;
+      left: -15%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(212,166,201,0.3) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: pulse 6s ease-in-out infinite;
+    }
+    
+    .floating-element {
+      position: absolute;
+      opacity: 0.5;
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    .floating-element:nth-child(1) { top: 10%; left: 10%; font-size: 3rem; animation-delay: 0s; }
+    .floating-element:nth-child(2) { top: 20%; right: 15%; font-size: 2.5rem; animation-delay: 1s; }
+    .floating-element:nth-child(3) { bottom: 20%; left: 15%; font-size: 2rem; animation-delay: 2s; }
+    .floating-element:nth-child(4) { bottom: 10%; right: 10%; font-size: 2.8rem; animation-delay: 3s; }
+    
+    .hero-content-landing {
+      max-width: 1000px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.95);
+      color: var(--primary-dark);
+      padding: 12px 32px;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 32px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(10px);
+    }
+    
+    .hero-landing h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      color: var(--text);
+      margin-bottom: 32px;
+      text-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      line-height: 1.15;
+    }
+    
+    .hero-landing .subtitle {
+      font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+      color: var(--text);
+      margin-bottom: 48px;
+      opacity: 0.9;
+      max-width: 850px;
+      margin-left: auto;
+      margin-right: auto;
+      font-weight: 400;
+    }
+    
+    .cta-primary {
+      display: inline-block;
+      background: var(--text);
+      color: white;
+      padding: 22px 56px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.2rem;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 12px 32px rgba(45, 45, 58, 0.3);
+      border: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .cta-primary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s;
+    }
+    
+    .cta-primary:hover::before {
+      left: 100%;
+    }
+    
+    .cta-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 48px rgba(45, 45, 58, 0.4);
+      background: var(--primary-dark);
+      color: white;
+    }
+    
+    .guarantee-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 28px;
+      color: var(--text);
+      font-size: 1rem;
+      opacity: 0.85;
+      font-weight: 500;
+    }
+    
+    /* Container */
+    .container-custom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Section Styles - Enhanced */
+    section {
+      padding: 100px 20px;
+      position: relative;
+    }
+    
+    .section-alt {
+      background: var(--bg-alt);
+      position: relative;
+    }
+    
+    .section-alt::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--primary-light), transparent);
+    }
+    
+    .section-header {
+      text-align: center;
+      max-width: 850px;
+      margin: 0 auto 80px;
+    }
+    
+    .section-badge {
+      display: inline-block;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      padding: 8px 24px;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    
+    .section-header h2 {
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      color: var(--text);
+      margin-bottom: 24px;
+      line-height: 1.2;
+    }
+    
+    .section-header p {
+      font-size: 1.25rem;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+    
+    /* Problem Section - Enhanced */
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    
+    .problem-card {
+      padding: 32px;
+      background: white;
+      border-radius: 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      box-shadow: var(--shadow-soft);
+      transition: all 0.4s ease;
+      border: 2px solid transparent;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .problem-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--gradient-2);
+      transform: scaleX(0);
+      transition: transform 0.4s ease;
+    }
+    
+    .problem-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-medium);
+      border-color: var(--primary-light);
+    }
+    
+    .problem-card:hover::before {
+      transform: scaleX(1);
+    }
+    
+    .problem-icon {
+      width: 60px;
+      height: 60px;
+      background: var(--gradient-1);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    
+    .problem-icon i {
+      color: var(--primary-dark);
+      font-size: 1.8rem;
+    }
+    
+    .problem-card strong {
+      display: block;
+      color: var(--text);
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+    
+    .problem-card p {
+      color: var(--muted);
+      margin: 0;
+      line-height: 1.6;
+    }
+    
+    /* Benefits Grid - Enhanced */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+      margin-top: 80px;
+    }
+    
+    .benefit-card {
+      background: white;
+      padding: 48px 36px;
+      border-radius: 24px;
+      text-align: center;
+      box-shadow: var(--shadow-soft);
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      border: 2px solid transparent;
+    }
+    
+    .benefit-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--gradient-1);
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      z-index: 0;
+    }
+    
+    .benefit-card:hover::before {
+      opacity: 0.05;
+    }
+    
+    .benefit-card:hover {
+      transform: translateY(-12px) scale(1.02);
+      box-shadow: var(--shadow-medium);
+      border-color: var(--primary-light);
+    }
+    
+    .benefit-card > * {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .benefit-icon {
+      width: 90px;
+      height: 90px;
+      background: var(--gradient-1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 28px;
+      box-shadow: var(--shadow-soft);
+      transition: all 0.5s ease;
+    }
+    
+    .benefit-card:hover .benefit-icon {
+      transform: scale(1.1) rotate(5deg);
+    }
+    
+    .benefit-icon i {
+      font-size: 2.2rem;
+      color: var(--primary-dark);
+    }
+    
+    .benefit-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+    
+    .benefit-card p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+    
+    /* How it Works - Timeline Design */
+    .timeline {
+      max-width: 900px;
+      margin: 80px auto 0;
+      position: relative;
+    }
+    
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 30px;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: var(--gradient-2);
+    }
+    
+    .timeline-item {
+      display: flex;
+      gap: 40px;
+      margin-bottom: 60px;
+      position: relative;
+      align-items: flex-start;
+    }
+    
+    .timeline-number {
+      width: 60px;
+      height: 60px;
+      background: var(--gradient-2);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      font-weight: 700;
+      flex-shrink: 0;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      z-index: 1;
+    }
+    
+    .timeline-content {
+      background: white;
+      padding: 32px;
+      border-radius: 20px;
+      box-shadow: var(--shadow-soft);
+      flex: 1;
+      transition: all 0.4s ease;
+    }
+    
+    .timeline-item:hover .timeline-content {
+      transform: translateX(10px);
+      box-shadow: var(--shadow-medium);
+    }
+    
+    .timeline-content h3 {
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+    
+    .timeline-content p {
+      color: var(--muted);
+      font-size: 1.08rem;
+      line-height: 1.7;
+      margin: 0;
+    }
+    
+    /* Image Section - Enhanced */
+    .image-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .image-wrapper {
+      position: relative;
+    }
+    
+    .image-wrapper::before {
+      content: '';
+      position: absolute;
+      top: -20px;
+      left: -20px;
+      right: 20px;
+      bottom: 20px;
+      background: var(--gradient-1);
+      border-radius: 30px;
+      z-index: 0;
+    }
+    
+    .image-section img {
+      width: 100%;
+      border-radius: 24px;
+      box-shadow: var(--shadow-medium);
+      position: relative;
+      z-index: 1;
+    }
+    
+    .image-content h2 {
+      font-size: 2.5rem;
+      margin-bottom: 28px;
+      color: var(--text);
+    }
+    
+    .image-content p {
+      font-size: 1.15rem;
+      color: var(--muted);
+      margin-bottom: 20px;
+      line-height: 1.8;
+    }
+    
+    .image-content ul {
+      list-style: none;
+      margin: 32px 0;
+    }
+    
+    .image-content ul li {
+      padding: 16px 0;
+      padding-left: 42px;
+      margin-bottom: 12px;
+      position: relative;
+      color: var(--text);
+      font-size: 1.05rem;
+      font-weight: 500;
+      border-left: 3px solid var(--primary-light);
+      padding-left: 24px;
+    }
+    
+    .image-content ul li::before {
+      content: '✨';
+      position: absolute;
+      left: -8px;
+      font-size: 1.4rem;
+      top: 12px;
+    }
+    
+    /* Pricing Section - Enhanced */
+    .pricing-section {
+      background: var(--gradient-2);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .pricing-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: pulse 10s ease-in-out infinite;
+    }
+    
+    .pricing-card {
+      max-width: 700px;
+      margin: 80px auto 0;
+      background: white;
+      padding: 60px 48px;
+      border-radius: 32px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+      text-align: center;
+      border: 4px solid rgba(255,255,255,0.5);
+      position: relative;
+      z-index: 1;
+    }
+    
+    .pricing-badge {
+      background: var(--gradient-2);
+      color: white;
+      padding: 12px 32px;
+      border-radius: 50px;
+      display: inline-block;
+      margin-bottom: 32px;
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: 0.5px;
+    }
+    
+    .pricing-features {
+      list-style: none;
+      text-align: left;
+      margin: 40px 0;
+    }
+    
+    .pricing-features li {
+      padding: 18px 0;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      border-bottom: 1px solid var(--primary-light);
+      font-size: 1.05rem;
+    }
+    
+    .pricing-features li:last-child {
+      border-bottom: none;
+    }
+    
+    .pricing-features i {
+      color: var(--primary);
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+    
+    /* Stats Section */
+    .stats-section {
+      background: var(--text);
+      color: white;
+      text-align: center;
+      padding: 80px 20px;
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 60px;
+      max-width: 1000px;
+      margin: 60px auto 0;
+    }
+    
+    .stat-item {
+      padding: 20px;
+    }
+    
+    .stat-number {
+      font-size: 4rem;
+      font-weight: 700;
+      color: var(--primary-light);
+      margin-bottom: 12px;
+      font-family: 'Playfair Display', serif;
+    }
+    
+    .stat-label {
+      font-size: 1.15rem;
+      opacity: 0.9;
+      font-weight: 500;
+    }
+    
+    /* CTA Section - Enhanced */
+    .cta-section {
+      background: var(--gradient-2);
+      text-align: center;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      bottom: -50%;
+      left: -20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: pulse 8s ease-in-out infinite;
+    }
+    
+    .cta-section h2 {
+      color: white;
+      font-size: clamp(2.5rem, 5vw, 3.8rem);
+      margin-bottom: 28px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .cta-section p {
+      font-size: 1.4rem;
+      margin-bottom: 48px;
+      opacity: 0.95;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .cta-white {
+      background: white;
+      color: var(--primary-dark);
+    }
+    
+    .cta-white:hover {
+      background: var(--bg);
+      color: var(--primary-dark);
+    }
+    
+    /* Footer */
+    footer {
+      background: linear-gradient(180deg, #f8f4f0 0%, #faf8f6 100%);
+      color: var(--text);
+      padding: 60px 20px;
+      text-align: center;
+      border-top: 1px solid rgba(201, 166, 212, 0.2);
+    }
+    
+    footer p {
+      margin-bottom: 12px;
+      opacity: 0.8;
+      color: var(--muted);
+    }
+    
+    footer a {
+      color: var(--primary-dark);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    footer a:hover {
+      color: var(--primary);
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-landing {
+        padding: 80px 20px;
+        min-height: auto;
+      }
+      
+      section {
+        padding: 70px 20px;
+      }
+      
+      .image-section {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+      
+      .image-wrapper::before {
+        display: none;
+      }
+      
+      .timeline::before {
+        left: 15px;
+      }
+      
+      .timeline-item {
+        gap: 20px;
+      }
+      
+      .timeline-number {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+      }
+      
+      .pricing-card {
+        padding: 40px 28px;
+      }
+      
+      .benefits-grid,
+      .problem-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+    
+    /* Floating CTA */
+    .floating-cta {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+      display: none;
+    }
+    
+    .floating-cta.show {
+      display: block;
+      animation: slideUp 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    @keyframes slideUp {
+      from {
+        transform: translateY(100px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .floating-cta {
+        left: 20px;
+        right: 20px;
+        bottom: 10px;
+      }
+      
+      .floating-cta .cta-primary {
+        width: 100%;
+        text-align: center;
+        padding: 18px 32px;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero Section -->
+  <section class="hero-landing">
+    <div class="floating-element">✨</div>
+    <div class="floating-element">💫</div>
+    <div class="floating-element">🌟</div>
+    <div class="floating-element">⭐</div>
+    
+    <div class="hero-content-landing">
+      <div class="hero-badge">✨ Programa de 30 Dias</div>
+      <h1>Transforme sua Vibração e Desperte uma Nova Versão de Si Mesma</h1>
+      <p class="subtitle">Jornada profunda de reprogramação vibracional através de áudios terapêuticos que realinham sua energia e despertam gratidão, otimismo e leveza em apenas 30 dias</p>
+      <a href="https://pay.hotmart.com/C104230289N?_gl=1*10mcbdk*_gcl_aw*R0NMLjE3NzAwNjEwMzMuQ2p3S0NBaUFzNEhNQmhCSkVpd0FDcmZOWlpRVXJwQjJNRmVWN1hkOUNiUER2WU0tQjM2MnhlY0IteE5ZcTNJMEVEZjlTWGdSZXpicGt4b0NvbzBRQXZEX0J3RQ..*_gcl_au*MTQ5Njk4OTY3NC4xNzY4OTMyNzExLjE4MDk3ODU4ODEuMTc2OTcyMDYxNi4xNzY5NzIwOTQx*FPAU*MTQ5Njk4OTY3NC4xNzY4OTMyNzEx*_ga*NTI4NzIzNDg4LjE3Njg5MzI3MTE.*_ga_GQH2V1F11Q*czE3NzAxMzM1MTEkbzgkZzEkdDE3NzAxMzM4OTgkajU1JGwwJGgw&bid=1770133905259" class="cta-primary">Começar minha transformação agora</a>
+      <div class="guarantee-badge">
+        <i class="bi bi-shield-check"></i>
+        <span>Acesso imediato • Seguro e confiável</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem Section -->
+  <section>
+    <div class="container-custom">
+      <div class="section-header">
+        <div class="section-badge">O Que Você Está Sentindo</div>
+        <h2>Se você se identifica com algum destes sentimentos...</h2>
+        <p>...então este programa foi criado especialmente para você</p>
+      </div>
+      <div class="problem-grid">
+        <div class="problem-card">
+          <div class="problem-icon">
+            <i class="bi bi-heart-half"></i>
+          </div>
+          <div>
+            <strong>Esgotamento emocional constante</strong>
+            <p>Você sente que está sempre cansada, sem energia vital, apenas sobrevivendo ao invés de viver plenamente</p>
+          </div>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon">
+            <i class="bi bi-cloud-rain"></i>
+          </div>
+          <div>
+            <strong>Pensamentos negativos recorrentes</strong>
+            <p>Sua mente está sempre focada nas preocupações, inseguranças e limitações</p>
+          </div>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon">
+            <i class="bi bi-emoji-frown"></i>
+          </div>
+          <div>
+            <strong>Dificuldade em sentir alegria</strong>
+            <p>Mesmo em momentos bons, você não consegue se conectar com a leveza e o prazer de viver</p>
+          </div>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon">
+            <i class="bi bi-arrow-down-circle"></i>
+          </div>
+          <div>
+            <strong>Presa em padrões limitantes</strong>
+            <p>Você repete as mesmas reações emocionais e escolhas que não te fazem feliz</p>
+          </div>
+        </div>
+        <div class="problem-card">
+          <div class="problem-icon">
+            <i class="bi bi-lightning"></i>
+          </div>
+          <div>
+            <strong>Desconexão com sua essência</strong>
+            <p>Você sente que perdeu o contato com quem você realmente é e seu propósito de vida</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solution Section -->
+  <section class="section-alt">
+    <div class="container-custom">
+      <div class="image-section">
+        <div class="image-wrapper">
+          <img src="./img/Carol/foto1.jpg" alt="Carol Fontanella - Terapeuta Integrativa">
+        </div>
+        <div class="image-content">
+          <div class="section-badge">A Solução</div>
+          <h2>Uma Jornada de 30 Dias para Transformar sua Energia</h2>
+          <p>O Programa de Reprogramação Vibracional foi cuidadosamente desenvolvido para atuar nas camadas mais profundas da sua energia emocional e mental.</p>
+          <p>Através de <strong>áudios terapêuticos baseados em cura quântica e frequências vibracionais elevadas</strong>, você irá dissolver bloqueios energéticos, reprogramar crenças limitantes e despertar uma nova consciência.</p>
+          <ul>
+            <li>Áudios exclusivos desenvolvidos por Carol Fontanella</li>
+            <li>Técnicas de cura quântica validadas</li>
+            <li>Frequências vibracionais calibradas</li>
+            <li>Processo gradual e profundo de 30 dias</li>
+            <li>Suporte durante toda a jornada</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section>
+    <div class="container-custom">
+      <div class="section-header">
+        <div class="section-badge">Benefícios</div>
+        <h2>O Que Você Vai Conquistar em 30 Dias</h2>
+        <p>Resultados reais que você vai sentir no corpo, na mente e na alma</p>
+      </div>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="bi bi-heart-pulse"></i>
+          </div>
+          <h3>Equilíbrio Emocional</h3>
+          <p>Reequilibre sua energia emocional e mental, sentindo mais estabilidade, paz interior e clareza</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="bi bi-stars"></i>
+          </div>
+          <h3>Gratidão como Força</h3>
+          <p>Cultive a gratidão como uma força transformadora que muda sua perspectiva e atrai abundância</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="bi bi-sun"></i>
+          </div>
+          <h3>Visão Positiva</h3>
+          <p>Desenvolva uma visão mais positiva e amorosa sobre si mesma e o mundo</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="bi bi-graph-up-arrow"></i>
+          </div>
+          <h3>Frequência Elevada</h3>
+          <p>Aprenda a vibrar em frequências mais elevadas de alegria, serenidade e amor</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="bi bi-flower1"></i>
+          </div>
+          <h3>Autocuidado Vibracional</h3>
+          <p>Integre práticas simples e poderosas de autocuidado vibracional no seu dia a dia</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="bi bi-lightning-charge"></i>
+          </div>
+          <h3>Conexão com Essência</h3>
+          <p>Retorne à sua essência verdadeira e crie uma nova realidade a partir da vibração do amor</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it Works -->
+  <section class="section-alt">
+    <div class="container-custom">
+      <div class="section-header">
+        <div class="section-badge">Como Funciona</div>
+        <h2>Sua Jornada de Transformação Passo a Passo</h2>
+        <p>Um processo simples, profundo e totalmente guiado</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-number">1</div>
+          <div class="timeline-content">
+            <h3>Acesso Imediato à Plataforma</h3>
+            <p>Assim que você adquirir o programa, receberá acesso imediato a todos os 30 áudios terapêuticos e materiais de apoio em uma plataforma exclusiva e fácil de usar.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-number">2</div>
+          <div class="timeline-content">
+            <h3>Um Áudio por Dia</h3>
+            <p>Você ouvirá um áudio diário de aproximadamente 15-20 minutos, preferencialmente no mesmo horário. Pode ser ao acordar, antes de dormir, ou em qualquer momento tranquilo.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-number">3</div>
+          <div class="timeline-content">
+            <h3>Deixe a Energia Fluir</h3>
+            <p>Os áudios trabalham diretamente no seu campo energético através de frequências vibracionais, reprogramando sutilmente seus padrões emocionais e mentais.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-number">4</div>
+          <div class="timeline-content">
+            <h3>Observe as Mudanças</h3>
+            <p>Ao longo dos 30 dias, você começará a perceber mudanças naturais: mais leveza, pensamentos mais positivos, maior gratidão e conexão profunda com sua essência.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-number">5</div>
+          <div class="timeline-content">
+            <h3>Integração e Nova Realidade</h3>
+            <p>Ao final dos 30 dias, as novas frequências estarão integradas ao seu campo energético, estabelecendo uma nova vibração - mais elevada, mais amorosa, mais alinhada.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What You Get -->
+  <section class="pricing-section">
+    <div class="container-custom">
+      <div class="section-header" style="color: white;">
+        <div class="section-badge" style="background: rgba(255,255,255,0.9); color: var(--primary-dark);">O Que Está Incluído</div>
+        <h2 style="color: white;">Tudo o Que Você Recebe no Programa</h2>
+        <p style="color: rgba(255,255,255,0.9);">Um pacote completo para sua transformação vibracional</p>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-badge">🎁 Pacote Completo de Transformação</div>
+        <ul class="pricing-features">
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            <span>30 áudios terapêuticos exclusivos (um para cada dia)</span>
+          </li>
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            <span>Acesso vitalício à plataforma</span>
+          </li>
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            <span>Material de apoio em PDF com orientações diárias</span>
+          </li>
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            <span>Diário de gratidão e transformação para download</span>
+          </li>
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            <span>Meditações guiadas complementares</span>
+          </li>
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            <span>Certificado de conclusão do programa</span>
+          </li>
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            <span>Suporte por email durante os 30 dias</span>
+          </li>
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            <span>Comunidade exclusiva de participantes</span>
+          </li>
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            <span>Garantia de 7 dias - 100% do seu dinheiro de volta</span>
+          </li>
+        </ul>
+        <a href="https://pay.hotmart.com/C104230289N?_gl=1*10mcbdk*_gcl_aw*R0NMLjE3NzAwNjEwMzMuQ2p3S0NBaUFzNEhNQmhCSkVpd0FDcmZOWlpRVXJwQjJNRmVWN1hkOUNiUER2WU0tQjM2MnhlY0IteE5ZcTNJMEVEZjlTWGdSZXpicGt4b0NvbzBRQXZEX0J3RQ..*_gcl_au*MTQ5Njk4OTY3NC4xNzY4OTMyNzExLjE4MDk3ODU4ODEuMTc2OTcyMDYxNi4xNzY5NzIwOTQx*FPAU*MTQ5Njk4OTY3NC4xNzY4OTMyNzEx*_ga*NTI4NzIzNDg4LjE3Njg5MzI3MTE.*_ga_GQH2V1F11Q*czE3NzAxMzM1MTEkbzgkZzEkdDE3NzAxMzM4OTgkajU1JGwwJGgw&bid=1770133905259" class="cta-primary" style="width: 100%; margin-top: 20px;">Começar minha jornada agora</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="cta-section">
+    <div class="container-custom">
+      <h2>Está Pronta Para Transformar Sua Vibração?</h2>
+      <p>Dê o primeiro passo para uma vida mais leve, confiante e alinhada com sua essência</p>
+      <a href="https://pay.hotmart.com/C104230289N?_gl=1*10mcbdk*_gcl_aw*R0NMLjE3NzAwNjEwMzMuQ2p3S0NBaUFzNEhNQmhCSkVpd0FDcmZOWlpRVXJwQjJNRmVWN1hkOUNiUER2WU0tQjM2MnhlY0IteE5ZcTNJMEVEZjlTWGdSZXpicGt4b0NvbzBRQXZEX0J3RQ..*_gcl_au*MTQ5Njk4OTY3NC4xNzY4OTMyNzExLjE4MDk3ODU4ODEuMTc2OTcyMDYxNi4xNzY5NzIwOTQx*FPAU*MTQ5Njk4OTY3NC4xNzY4OTMyNzEx*_ga*NTI4NzIzNDg4LjE3Njg5MzI3MTE.*_ga_GQH2V1F11Q*czE3NzAxMzM1MTEkbzgkZzEkdDE3NzAxMzM4OTgkajU1JGwwJGgw&bid=1770133905259" class="cta-primary cta-white">Começar minha transformação agora ✨</a>
+      <div class="guarantee-badge" style="color: white;">
+        <i class="bi bi-shield-check"></i>
+        <span>Garantia de 7 dias • Pagamento 100% seguro • Acesso imediato</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container-custom">
+      <p>&copy; 2026 Carol Fontanella - Terapia Integrativa. Todos os direitos reservados.</p>
+      <p style="margin-top: 16px;">
+        <a href="index.html">← Voltar ao site principal</a>
+      </p>
+    </div>
+    <div style="text-align: center; margin-top: 30px; padding-top: 30px; border-top: 1px solid rgba(201, 166, 212, 0.2);">
+      <a href="http://glauberbarcelos.com.br" target="_blank" rel="noreferrer" style="display: inline-flex; align-items: center; gap: 12px; text-decoration: none; transition: all 0.3s ease; opacity: 0.8;">
+        <span style="color: var(--muted); font-size: 13px; font-weight: 500;">Desenvolvido por</span>
+        <img src="img/glauber/logo.png" alt="Glauber Barcelos" style="height: 28px; transition: all 0.3s ease;">
+      </a>
+    </div>
+  </footer>
+
+  <!-- Floating CTA -->
+  <div class="floating-cta" id="floatingCta">
+    <a href="https://pay.hotmart.com/C104230289N?_gl=1*10mcbdk*_gcl_aw*R0NMLjE3NzAwNjEwMzMuQ2p3S0NBaUFzNEhNQmhCSkVpd0FDcmZOWlpRVXJwQjJNRmVWN1hkOUNiUER2WU0tQjM2MnhlY0IteE5ZcTNJMEVEZjlTWGdSZXpicGt4b0NvbzBRQXZEX0J3RQ..*_gcl_au*MTQ5Njk4OTY3NC4xNzY4OTMyNzExLjE4MDk3ODU4ODEuMTc2OTcyMDYxNi4xNzY5NzIwOTQx*FPAU*MTQ5Njk4OTY3NC4xNzY4OTMyNzEx*_ga*NTI4NzIzNDg4LjE3Njg5MzI3MTE.*_ga_GQH2V1F11Q*czE3NzAxMzM1MTEkbzgkZzEkdDE3NzAxMzM4OTgkajU1JGwwJGgw&bid=1770133905259" class="cta-primary">Quero transformar minha vibração ✨</a>
+  </div>
+
+  <script>
+    // Floating CTA on scroll
+    const floatingCta = document.getElementById('floatingCta');
+    let scrollTimeout;
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 1000) {
+        floatingCta.classList.add('show');
+        
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+          if (window.scrollY < window.document.body.scrollHeight - window.innerHeight - 500) {
+            floatingCta.classList.remove('show');
+          }
+        }, 4000);
+      } else {
+        floatingCta.classList.remove('show');
+      }
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

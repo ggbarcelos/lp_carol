@@ -1181,13 +1181,18 @@ section { padding: 50px 20px; }
   transform: translateY(-2px);
 }
 .developer-logo {
-  height: 24px;
+  height: 28px;
   width: auto;
-  filter: grayscale(20%);
+  filter: none;
   transition: var(--transition);
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
 }
 .developer-link:hover .developer-logo {
-  filter: grayscale(0%);
+  filter: none;
+  background: transparent;
+  opacity: 0.8;
 }
 .floating-cta {
   position: fixed;
