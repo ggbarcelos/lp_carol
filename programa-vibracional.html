@@ -24,20 +24,21 @@
   
   <style>
     :root {
-      --primary: #c9a6d4;
-      --primary-dark: #a583b3;
-      --primary-light: #e6d9ec;
+      --primary: #b794d4;
+      --primary-dark: #7a4b96;
+      --primary-light: #eadcf5;
       --secondary: #8b7ba8;
-      --accent: #d4a6c9;
-      --text: #2d2d3a;
-      --muted: #6b6b7d;
-      --bg: #fdfbff;
-      --bg-alt: #f8f5fc;
+      --accent: #e06ca8;
+      --text: #251c35;
+      --muted: #5f5772;
+      --bg: #fcf9ff;
+      --bg-alt: #f6f0fb;
       --surface: #ffffff;
-      --gradient-1: linear-gradient(135deg, #e6d9ec 0%, #c9a6d4 100%);
-      --gradient-2: linear-gradient(135deg, #c9a6d4 0%, #8b7ba8 100%);
-      --shadow-soft: 0 10px 40px rgba(201, 166, 212, 0.15);
-      --shadow-medium: 0 15px 50px rgba(201, 166, 212, 0.25);
+      --gradient-1: linear-gradient(135deg, #f4e9fb 0%, #d4b4ea 48%, #be9ad9 100%);
+      --gradient-2: linear-gradient(135deg, #9f71c0 0%, #6f4a96 100%);
+      --gradient-cta: linear-gradient(135deg, #7a4b96 0%, #e06ca8 100%);
+      --shadow-soft: 0 10px 32px rgba(122, 75, 150, 0.14);
+      --shadow-medium: 0 18px 52px rgba(122, 75, 150, 0.22);
     }
     
     * {
@@ -52,12 +53,15 @@
       background: var(--bg);
       line-height: 1.7;
       overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
     
     h1, h2, h3 {
       font-family: 'Playfair Display', serif;
       line-height: 1.2;
       font-weight: 700;
+      letter-spacing: -0.01em;
     }
     
     /* Animated Background */
@@ -75,7 +79,10 @@
     /* Hero Section - Enhanced */
     .hero-landing {
       min-height: 100vh;
-      background: var(--gradient-1);
+      background:
+        radial-gradient(circle at 85% 15%, rgba(255,255,255,0.65) 0%, transparent 45%),
+        radial-gradient(circle at 15% 85%, rgba(224,108,168,0.18) 0%, transparent 40%),
+        var(--gradient-1);
       padding: 100px 20px;
       text-align: center;
       position: relative;
@@ -121,10 +128,57 @@
     .floating-element:nth-child(4) { bottom: 10%; right: 10%; font-size: 2.8rem; animation-delay: 3s; }
     
     .hero-content-landing {
-      max-width: 1000px;
+      max-width: 680px;
       margin: 0 auto;
       position: relative;
       z-index: 1;
+      text-align: left;
+    }
+
+    .hero-layout {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      align-items: center;
+      gap: 56px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-visual-landing {
+      position: relative;
+      justify-self: center;
+      width: min(420px, 100%);
+    }
+
+    .hero-visual-landing::before {
+      content: '';
+      position: absolute;
+      inset: 14px -16px -14px 16px;
+      border-radius: 28px;
+      background: var(--gradient-2);
+      opacity: 0.24;
+      z-index: 0;
+      filter: blur(1px);
+    }
+
+    .hero-photo-wrap {
+      position: relative;
+      border-radius: 28px;
+      overflow: hidden;
+      z-index: 1;
+      background: white;
+      box-shadow: 0 24px 56px rgba(41, 20, 58, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.65);
+    }
+
+    .hero-photo-wrap img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: center top;
     }
     
     .hero-badge {
@@ -145,25 +199,47 @@
     .hero-landing h1 {
       font-size: clamp(2.5rem, 6vw, 4.5rem);
       color: var(--text);
-      margin-bottom: 32px;
+      margin-bottom: 24px;
       text-shadow: 0 4px 8px rgba(0,0,0,0.05);
       line-height: 1.15;
     }
     
     .hero-landing .subtitle {
       font-size: clamp(1.2rem, 2.5vw, 1.6rem);
-      color: var(--text);
-      margin-bottom: 48px;
-      opacity: 0.9;
+      color: var(--muted);
+      margin-bottom: 36px;
+      opacity: 1;
       max-width: 850px;
       margin-left: auto;
       margin-right: auto;
       font-weight: 400;
     }
+
+    .hero-proof {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      gap: 12px;
+      margin-bottom: 36px;
+    }
+
+    .hero-proof-item {
+      background: rgba(255,255,255,0.82);
+      border: 1px solid rgba(122, 75, 150, 0.18);
+      color: var(--text);
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      backdrop-filter: blur(6px);
+    }
     
     .cta-primary {
       display: inline-block;
-      background: var(--text);
+      background: var(--gradient-cta);
       color: white;
       padding: 22px 56px;
       border-radius: 50px;
@@ -171,8 +247,8 @@
       font-weight: 700;
       font-size: 1.2rem;
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: 0 12px 32px rgba(45, 45, 58, 0.3);
-      border: none;
+      box-shadow: 0 14px 34px rgba(122, 75, 150, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.28);
       cursor: pointer;
       position: relative;
       overflow: hidden;
@@ -195,9 +271,13 @@
     
     .cta-primary:hover {
       transform: translateY(-3px);
-      box-shadow: 0 18px 48px rgba(45, 45, 58, 0.4);
-      background: var(--primary-dark);
+      box-shadow: 0 18px 46px rgba(122, 75, 150, 0.42);
       color: white;
+    }
+
+    .cta-primary:focus-visible {
+      outline: 3px solid rgba(224, 108, 168, 0.45);
+      outline-offset: 3px;
     }
     
     .guarantee-badge {
@@ -205,10 +285,14 @@
       align-items: center;
       gap: 10px;
       margin-top: 28px;
-      color: var(--text);
+      color: var(--muted);
       font-size: 1rem;
-      opacity: 0.85;
+      opacity: 1;
       font-weight: 500;
+    }
+
+    .hero-content-landing .cta-primary {
+      align-self: flex-start;
     }
     
     /* Container */
@@ -220,7 +304,7 @@
     
     /* Section Styles - Enhanced */
     section {
-      padding: 100px 20px;
+      padding: 96px 20px;
       position: relative;
     }
     
@@ -427,6 +511,44 @@
       font-size: 1.05rem;
       line-height: 1.7;
     }
+
+    /* Objections Section */
+    .objections-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .objection-card {
+      background: white;
+      border-radius: 22px;
+      padding: 32px;
+      border: 1px solid var(--primary-light);
+      box-shadow: var(--shadow-soft);
+      transition: all 0.35s ease;
+    }
+
+    .objection-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-medium);
+    }
+
+    .objection-title {
+      font-family: 'Playfair Display', serif;
+      color: var(--text);
+      font-size: 1.35rem;
+      margin-bottom: 14px;
+      line-height: 1.3;
+    }
+
+    .objection-card p {
+      color: var(--muted);
+      margin: 0;
+      line-height: 1.72;
+      font-size: 1.02rem;
+    }
     
     /* How it Works - Timeline Design */
     .timeline {
@@ -505,6 +627,11 @@
       align-items: center;
       max-width: 1200px;
       margin: 0 auto;
+    }
+
+    .image-section-single {
+      grid-template-columns: 1fr;
+      max-width: 900px;
     }
     
     .image-wrapper {
@@ -594,7 +721,7 @@
       background: white;
       padding: 60px 48px;
       border-radius: 32px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+      box-shadow: 0 24px 64px rgba(41, 20, 58, 0.28);
       text-align: center;
       border: 4px solid rgba(255,255,255,0.5);
       position: relative;
@@ -611,6 +738,22 @@
       font-weight: 700;
       font-size: 1.05rem;
       letter-spacing: 0.5px;
+    }
+
+    .conversion-note {
+      background: #f9f2ff;
+      border: 1px solid #eadcf5;
+      border-radius: 18px;
+      padding: 18px 20px;
+      margin: 0 auto 24px;
+      max-width: 560px;
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 1.02rem;
+    }
+
+    .conversion-note strong {
+      color: var(--primary-dark);
     }
     
     .pricing-features {
@@ -633,7 +776,7 @@
     }
     
     .pricing-features i {
-      color: var(--primary);
+      color: var(--primary-dark);
       font-size: 1.4rem;
       flex-shrink: 0;
     }
@@ -712,6 +855,7 @@
     .cta-white {
       background: white;
       color: var(--primary-dark);
+      border-color: rgba(122, 75, 150, 0.2);
     }
     
     .cta-white:hover {
@@ -750,6 +894,25 @@
         padding: 80px 20px;
         min-height: auto;
       }
+
+      .hero-layout {
+        grid-template-columns: 1fr;
+        gap: 34px;
+      }
+
+      .hero-content-landing {
+        max-width: 100%;
+        text-align: center;
+      }
+
+      .hero-proof {
+        justify-content: center;
+      }
+
+      .hero-visual-landing {
+        width: min(320px, 86vw);
+        order: -1;
+      }
       
       section {
         padding: 70px 20px;
@@ -780,6 +943,11 @@
       
       .pricing-card {
         padding: 40px 28px;
+      }
+
+      .hero-proof-item {
+        gap: 10px;
+        font-size: 0.9rem;
       }
       
       .benefits-grid,
@@ -832,6 +1000,16 @@
         font-size: 1rem;
       }
     }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+      }
+    }
   </style>
   
   <!-- Microsoft Clarity -->
@@ -844,45 +1022,54 @@
   </script>
 </head>
 <body>
-  <!-- Solution Section -->
-  <section class="section-alt">
-    <div class="container-custom">
-      <div class="image-section">
-        <div class="image-wrapper">
-          <img src="./img/Carol/foto1.jpg" alt="Carol Fontanella - Terapeuta Integrativa">
-        </div>
-        <div class="image-content">
-          <div class="section-badge">A Solução</div>
-          <h2>Uma Jornada de 30 Dias para Transformar sua Energia</h2>
-          <p>O Programa de Reprogramação Vibracional foi cuidadosamente desenvolvido para atuar nas camadas mais profundas da sua energia emocional e mental.</p>
-          <p>Através de <strong>áudios terapêuticos baseados em cura quântica e frequências vibracionais elevadas</strong>, você irá dissolver bloqueios energéticos, reprogramar crenças limitantes e despertar uma nova consciência.</p>
-          <ul>
-            <li>Áudios exclusivos desenvolvidos por Carol Fontanella</li>
-            <li>Técnicas de cura quântica validadas</li>
-            <li>Frequências vibracionais calibradas</li>
-            <li>Processo gradual e profundo de 30 dias</li>
-            <li>Suporte durante toda a jornada</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Hero Section -->
   <section class="hero-landing">
     <div class="floating-element">✨</div>
     <div class="floating-element">💫</div>
     <div class="floating-element">🌟</div>
     <div class="floating-element">⭐</div>
-    
-    <div class="hero-content-landing">
-      <div class="hero-badge">✨ Programa de 30 Dias</div>
-      <h1>Transforme sua Vibração e Desperte uma Nova Versão de Si Mesma</h1>
-      <p class="subtitle">Jornada profunda de reprogramação vibracional através de áudios terapêuticos que realinham sua energia e despertam gratidão, otimismo e leveza em apenas 30 dias</p>
-      <a href="https://pay.hotmart.com/C104230289N?_gl=1*10mcbdk*_gcl_aw*R0NMLjE3NzAwNjEwMzMuQ2p3S0NBaUFzNEhNQmhCSkVpd0FDcmZOWlpRVXJwQjJNRmVWN1hkOUNiUER2WU0tQjM2MnhlY0IteE5ZcTNJMEVEZjlTWGdSZXpicGt4b0NvbzBRQXZEX0J3RQ..*_gcl_au*MTQ5Njk4OTY3NC4xNzY4OTMyNzExLjE4MDk3ODU4ODEuMTc2OTcyMDYxNi4xNzY5NzIwOTQx*FPAU*MTQ5Njk4OTY3NC4xNzY4OTMyNzEx*_ga*NTI4NzIzNDg4LjE3Njg5MzI3MTE.*_ga_GQH2V1F11Q*czE3NzAxMzM1MTEkbzgkZzEkdDE3NzAxMzM4OTgkajU1JGwwJGgw&bid=1770133905259" class="cta-primary">Começar minha transformação agora</a>
-      <div class="guarantee-badge">
-        <i class="bi bi-shield-check"></i>
-        <span>Acesso imediato • Seguro e confiável</span>
+
+    <div class="hero-layout">
+      <div class="hero-content-landing">
+        <div class="hero-badge">✨ Programa de 30 Dias</div>
+        <h1>Reprograme sua energia em 30 dias e volte a se sentir leve, confiante e emocionalmente alinhada</h1>
+        <p class="subtitle">Um programa guiado de reprogramação vibracional com áudios terapêuticos diários para mulheres cansadas do esgotamento emocional, dos pensamentos negativos e da sensação de estarem desconectadas de si mesmas.</p>
+        <div class="hero-proof">
+          <div class="hero-proof-item"><i class="bi bi-calendar2-check"></i> 30 dias guiados</div>
+          <div class="hero-proof-item"><i class="bi bi-lightning-charge-fill"></i> Acesso imediato</div>
+        </div>
+        <a href="https://pay.hotmart.com/C104230289N?_gl=1*10mcbdk*_gcl_aw*R0NMLjE3NzAwNjEwMzMuQ2p3S0NBaUFzNEhNQmhCSkVpd0FDcmZOWlpRVXJwQjJNRmVWN1hkOUNiUER2WU0tQjM2MnhlY0IteE5ZcTNJMEVEZjlTWGdSZXpicGt4b0NvbzBRQXZEX0J3RQ..*_gcl_au*MTQ5Njk4OTY3NC4xNzY4OTMyNzExLjE4MDk3ODU4ODEuMTc2OTcyMDYxNi4xNzY5NzIwOTQx*FPAU*MTQ5Njk4OTY3NC4xNzY4OTMyNzEx*_ga*NTI4NzIzNDg4LjE3Njg5MzI3MTE.*_ga_GQH2V1F11Q*czE3NzAxMzM1MTEkbzgkZzEkdDE3NzAxMzM4OTgkajU1JGwwJGgw&bid=1770133905259" class="cta-primary">Quero começar meus 30 dias de transformação</a>
+        <div class="guarantee-badge">
+          <i class="bi bi-shield-check"></i>
+          <span>Acesso imediato • Seguro e confiável</span>
+        </div>
+      </div>
+
+      <div class="hero-visual-landing">
+        <div class="hero-photo-wrap">
+          <img src="./img/Carol/foto2.jpg" alt="Carol Fontanella - Terapeuta Integrativa" loading="eager">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solution Section -->
+  <section class="section-alt">
+    <div class="container-custom">
+      <div class="image-section image-section-single">
+        <div class="image-content">
+          <div class="section-badge">A Solução</div>
+          <h2>Um método guiado de 30 dias para reprogramar sua frequência emocional</h2>
+          <p>O Programa de Reprogramação Vibracional não é mais uma promessa vaga de “cura quântica”. Ele é um processo estruturado que combina áudios terapêuticos diários com práticas simples de percepção emocional.</p>
+          <p>Em apenas 15 a 20 minutos por dia, você instala um novo padrão interno de calma, clareza e bem-estar — criando espaço para decisões mais leves, relações mais saudáveis e uma sensação concreta de equilíbrio mental.</p>
+          <ul>
+            <li>Áudios terapêuticos diários (15 a 20 minutos)</li>
+            <li>Método guiado com sequência progressiva de 30 dias</li>
+            <li>Práticas simples de percepção emocional</li>
+            <li>Novo padrão de calma, clareza e bem-estar</li>
+            <li>Suporte durante toda a jornada</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -902,7 +1089,7 @@
           </div>
           <div>
             <strong>Esgotamento emocional constante</strong>
-            <p>Você sente que está sempre cansada, sem energia vital, apenas sobrevivendo ao invés de viver plenamente</p>
+            <p>Você acorda cansada, sente o emocional pesado e percebe que está apenas sobrevivendo, sem entusiasmo e sem prazer nas pequenas coisas.</p>
           </div>
         </div>
         <div class="problem-card">
@@ -911,7 +1098,7 @@
           </div>
           <div>
             <strong>Pensamentos negativos recorrentes</strong>
-            <p>Sua mente está sempre focada nas preocupações, inseguranças e limitações</p>
+            <p>Sua mente parece não desligar: preocupação, culpa, insegurança, medo do futuro… e você sente que já não sabe como sair desse ciclo emocional.</p>
           </div>
         </div>
         <div class="problem-card">
@@ -956,45 +1143,63 @@
       <div class="benefits-grid">
         <div class="benefit-card">
           <div class="benefit-icon">
+            <i class="bi bi-toggle2-off"></i>
+          </div>
+          <h3>Saída do Piloto Automático</h3>
+          <p>Pare de viver no piloto automático emocional e aprenda a perceber leveza, presença e bem-estar mesmo nos dias difíceis.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">
             <i class="bi bi-heart-pulse"></i>
           </div>
-          <h3>Equilíbrio Emocional</h3>
-          <p>Reequilibre sua energia emocional e mental, sentindo mais estabilidade, paz interior e clareza</p>
+          <h3>Leveza e Clareza Emocional</h3>
+          <p>Sinta-se emocionalmente mais leve e centrada, com menos ansiedade mental, menos sobrecarga emocional e mais clareza para viver seus dias.</p>
         </div>
         <div class="benefit-card">
           <div class="benefit-icon">
-            <i class="bi bi-stars"></i>
+            <i class="bi bi-person-heart"></i>
           </div>
-          <h3>Gratidão como Força</h3>
-          <p>Cultive a gratidão como uma força transformadora que muda sua perspectiva e atrai abundância</p>
+          <h3>Reconexão com Sua Identidade</h3>
+          <p>Volte a gostar da mulher que vê no espelho, reconectando-se com sua identidade, autoestima e propósito.</p>
         </div>
         <div class="benefit-card">
           <div class="benefit-icon">
-            <i class="bi bi-sun"></i>
+            <i class="bi bi-people"></i>
           </div>
-          <h3>Visão Positiva</h3>
-          <p>Desenvolva uma visão mais positiva e amorosa sobre si mesma e o mundo</p>
-        </div>
-        <div class="benefit-card">
-          <div class="benefit-icon">
-            <i class="bi bi-graph-up-arrow"></i>
-          </div>
-          <h3>Frequência Elevada</h3>
-          <p>Aprenda a vibrar em frequências mais elevadas de alegria, serenidade e amor</p>
-        </div>
-        <div class="benefit-card">
-          <div class="benefit-icon">
-            <i class="bi bi-flower1"></i>
-          </div>
-          <h3>Autocuidado Vibracional</h3>
-          <p>Integre práticas simples e poderosas de autocuidado vibracional no seu dia a dia</p>
+          <h3>Relações Mais Saudáveis</h3>
+          <p>Crie espaço para vínculos mais leves e verdadeiros ao reduzir padrões repetitivos de reação emocional.</p>
         </div>
         <div class="benefit-card">
           <div class="benefit-icon">
             <i class="bi bi-lightning-charge"></i>
           </div>
-          <h3>Conexão com Essência</h3>
-          <p>Retorne à sua essência verdadeira e crie uma nova realidade a partir da vibração do amor</p>
+          <h3>Energia Mental para o que Importa</h3>
+          <p>Liberte-se da exaustão emocional e recupere foco para seus projetos pessoais e profissionais.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proof & Objections Section -->
+  <section class="section-alt">
+    <div class="container-custom">
+      <div class="section-header">
+        <div class="section-badge">Prova e Objeções</div>
+        <h2>Talvez você esteja pensando nisso agora</h2>
+        <p>Respostas diretas para as dúvidas mais comuns antes de começar sua jornada.</p>
+      </div>
+      <div class="objections-grid">
+        <div class="objection-card">
+          <h3 class="objection-title">“E se eu nunca consegui mudar?”</h3>
+          <p>Este programa foi criado justamente para mulheres que já tentaram meditação, vídeos motivacionais, frases positivas ou práticas isoladas e ainda sentem que algo continua pesado emocionalmente. Aqui, você recebe uma jornada guiada, simples e progressiva de 30 dias.</p>
+        </div>
+        <div class="objection-card">
+          <h3 class="objection-title">“E se eu não tiver disciplina?”</h3>
+          <p>O método foi desenhado para caber em rotinas reais: apenas 15 a 20 minutos por dia, com áudios curtos e práticos que podem ser feitos em qualquer lugar. Você não precisa de força de vontade infinita, apenas seguir o passo a passo.</p>
+        </div>
+        <div class="objection-card">
+          <h3 class="objection-title">“E se não funcionar para mim?”</h3>
+          <p>Cada etapa foi pensada para gerar resultados perceptíveis desde a primeira semana: mais calma mental, menos ansiedade e maior clareza emocional. O programa não depende de crença, mas de prática consistente e guiada.</p>
         </div>
       </div>
     </div>
@@ -1005,43 +1210,29 @@
     <div class="container-custom">
       <div class="section-header">
         <div class="section-badge">Como Funciona</div>
-        <h2>Sua Jornada de Transformação Passo a Passo</h2>
-        <p>Um processo simples, profundo e totalmente guiado</p>
+        <h2>Uma experiência guiada para mudar seu estado emocional</h2>
+        <p>Você começa hoje, com passos simples e resultados percebidos ao longo das semanas.</p>
       </div>
       <div class="timeline">
         <div class="timeline-item">
           <div class="timeline-number">1</div>
           <div class="timeline-content">
-            <h3>Acesso Imediato à Plataforma</h3>
-            <p>Assim que você adquirir o programa, receberá acesso imediato a todos os 30 áudios terapêuticos e materiais de apoio em uma plataforma exclusiva e fácil de usar.</p>
+            <h3>Receba acesso imediato</h3>
+            <p>Entre hoje e comece ainda esta noite sua jornada de realinhamento emocional, sem esperar nem um dia para sentir que algo novo está começando.</p>
           </div>
         </div>
         <div class="timeline-item">
           <div class="timeline-number">2</div>
           <div class="timeline-content">
-            <h3>Um Áudio por Dia</h3>
-            <p>Você ouvirá um áudio diário de aproximadamente 15-20 minutos, preferencialmente no mesmo horário. Pode ser ao acordar, antes de dormir, ou em qualquer momento tranquilo.</p>
+            <h3>15 minutos por dia</h3>
+            <p>Sem rotina complicada. Apenas um áudio guiado diário para ajudar sua mente e emoções a saírem do estado de sobrecarga e criarem espaço para leveza.</p>
           </div>
         </div>
         <div class="timeline-item">
           <div class="timeline-number">3</div>
           <div class="timeline-content">
-            <h3>Deixe a Energia Fluir</h3>
-            <p>Os áudios trabalham diretamente no seu campo energético através de frequências vibracionais, reprogramando sutilmente seus padrões emocionais e mentais.</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-number">4</div>
-          <div class="timeline-content">
-            <h3>Observe as Mudanças</h3>
-            <p>Ao longo dos 30 dias, você começará a perceber mudanças naturais: mais leveza, pensamentos mais positivos, maior gratidão e conexão profunda com sua essência.</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-number">5</div>
-          <div class="timeline-content">
-            <h3>Integração e Nova Realidade</h3>
-            <p>Ao final dos 30 dias, as novas frequências estarão integradas ao seu campo energético, estabelecendo uma nova vibração - mais elevada, mais amorosa, mais alinhada.</p>
+            <h3>Comece a sentir pequenas mudanças</h3>
+            <p>Mais calma, mais clareza, menos peso emocional e mais presença. Uma transformação progressiva que você percebe semana após semana.</p>
           </div>
         </div>
       </div>
@@ -1058,6 +1249,9 @@
       </div>
       <div class="pricing-card">
         <div class="pricing-badge">🎁 Pacote Completo de Transformação</div>
+        <p class="conversion-note">
+          <strong>Condição especial na página de pagamento:</strong> você garante acesso completo ao programa em pagamento único.
+        </p>
         <ul class="pricing-features">
           <li>
             <i class="bi bi-check-circle-fill"></i>
@@ -1091,12 +1285,8 @@
             <i class="bi bi-check-circle-fill"></i>
             <span>Comunidade exclusiva de participantes</span>
           </li>
-          <li>
-            <i class="bi bi-check-circle-fill"></i>
-            <span>Garantia de 7 dias - 100% do seu dinheiro de volta</span>
-          </li>
         </ul>
-        <a href="https://pay.hotmart.com/C104230289N?_gl=1*10mcbdk*_gcl_aw*R0NMLjE3NzAwNjEwMzMuQ2p3S0NBaUFzNEhNQmhCSkVpd0FDcmZOWlpRVXJwQjJNRmVWN1hkOUNiUER2WU0tQjM2MnhlY0IteE5ZcTNJMEVEZjlTWGdSZXpicGt4b0NvbzBRQXZEX0J3RQ..*_gcl_au*MTQ5Njk4OTY3NC4xNzY4OTMyNzExLjE4MDk3ODU4ODEuMTc2OTcyMDYxNi4xNzY5NzIwOTQx*FPAU*MTQ5Njk4OTY3NC4xNzY4OTMyNzEx*_ga*NTI4NzIzNDg4LjE3Njg5MzI3MTE.*_ga_GQH2V1F11Q*czE3NzAxMzM1MTEkbzgkZzEkdDE3NzAxMzM4OTgkajU1JGwwJGgw&bid=1770133905259" class="cta-primary" style="width: 100%; margin-top: 20px;">Começar minha jornada agora</a>
+        <a href="https://pay.hotmart.com/C104230289N?_gl=1*10mcbdk*_gcl_aw*R0NMLjE3NzAwNjEwMzMuQ2p3S0NBaUFzNEhNQmhCSkVpd0FDcmZOWlpRVXJwQjJNRmVWN1hkOUNiUER2WU0tQjM2MnhlY0IteE5ZcTNJMEVEZjlTWGdSZXpicGt4b0NvbzBRQXZEX0J3RQ..*_gcl_au*MTQ5Njk4OTY3NC4xNzY4OTMyNzExLjE4MDk3ODU4ODEuMTc2OTcyMDYxNi4xNzY5NzIwOTQx*FPAU*MTQ5Njk4OTY3NC4xNzY4OTMyNzEx*_ga*NTI4NzIzNDg4LjE3Njg5MzI3MTE.*_ga_GQH2V1F11Q*czE3NzAxMzM1MTEkbzgkZzEkdDE3NzAxMzM4OTgkajU1JGwwJGgw&bid=1770133905259" class="cta-primary" style="width: 100%; margin-top: 20px;">Quero começar meus 30 dias de transformação</a>
       </div>
     </div>
   </section>
@@ -1104,12 +1294,12 @@
   <!-- Final CTA -->
   <section class="cta-section">
     <div class="container-custom">
-      <h2>Está Pronta Para Transformar Sua Vibração?</h2>
-      <p>Dê o primeiro passo para uma vida mais leve, confiante e alinhada com sua essência</p>
-      <a href="https://pay.hotmart.com/C104230289N?_gl=1*10mcbdk*_gcl_aw*R0NMLjE3NzAwNjEwMzMuQ2p3S0NBaUFzNEhNQmhCSkVpd0FDcmZOWlpRVXJwQjJNRmVWN1hkOUNiUER2WU0tQjM2MnhlY0IteE5ZcTNJMEVEZjlTWGdSZXpicGt4b0NvbzBRQXZEX0J3RQ..*_gcl_au*MTQ5Njk4OTY3NC4xNzY4OTMyNzExLjE4MDk3ODU4ODEuMTc2OTcyMDYxNi4xNzY5NzIwOTQx*FPAU*MTQ5Njk4OTY3NC4xNzY4OTMyNzEx*_ga*NTI4NzIzNDg4LjE3Njg5MzI3MTE.*_ga_GQH2V1F11Q*czE3NzAxMzM1MTEkbzgkZzEkdDE3NzAxMzM4OTgkajU1JGwwJGgw&bid=1770133905259" class="cta-primary cta-white">Começar minha transformação agora ✨</a>
+      <h2>Você não precisa continuar vivendo emocionalmente cansada — em apenas 30 dias, comece uma jornada de reconexão, leveza e fortalecimento interior.</h2>
+      <p>Permita-se sentir mais calma, clareza e energia para viver seus dias com presença.</p>
+      <a href="https://pay.hotmart.com/C104230289N?_gl=1*10mcbdk*_gcl_aw*R0NMLjE3NzAwNjEwMzMuQ2p3S0NBaUFzNEhNQmhCSkVpd0FDcmZOWlpRVXJwQjJNRmVWN1hkOUNiUER2WU0tQjM2MnhlY0IteE5ZcTNJMEVEZjlTWGdSZXpicGt4b0NvbzBRQXZEX0J3RQ..*_gcl_au*MTQ5Njk4OTY3NC4xNzY4OTMyNzExLjE4MDk3ODU4ODEuMTc2OTcyMDYxNi4xNzY5NzIwOTQx*FPAU*MTQ5Njk4OTY3NC4xNzY4OTMyNzEx*_ga*NTI4NzIzNDg4LjE3Njg5MzI3MTE.*_ga_GQH2V1F11Q*czE3NzAxMzM1MTEkbzgkZzEkdDE3NzAxMzM4OTgkajU1JGwwJGgw&bid=1770133905259" class="cta-primary cta-white">Quero começar minha transformação de 30 dias</a>
       <div class="guarantee-badge" style="color: white;">
         <i class="bi bi-shield-check"></i>
-        <span>Garantia de 7 dias • Pagamento 100% seguro • Acesso imediato</span>
+        <span>Pagamento 100% seguro • Acesso imediato</span>
       </div>
     </div>
   </section>
@@ -1132,7 +1322,7 @@
 
   <!-- Floating CTA -->
   <div class="floating-cta" id="floatingCta">
-    <a href="https://pay.hotmart.com/C104230289N?_gl=1*10mcbdk*_gcl_aw*R0NMLjE3NzAwNjEwMzMuQ2p3S0NBaUFzNEhNQmhCSkVpd0FDcmZOWlpRVXJwQjJNRmVWN1hkOUNiUER2WU0tQjM2MnhlY0IteE5ZcTNJMEVEZjlTWGdSZXpicGt4b0NvbzBRQXZEX0J3RQ..*_gcl_au*MTQ5Njk4OTY3NC4xNzY4OTMyNzExLjE4MDk3ODU4ODEuMTc2OTcyMDYxNi4xNzY5NzIwOTQx*FPAU*MTQ5Njk4OTY3NC4xNzY4OTMyNzEx*_ga*NTI4NzIzNDg4LjE3Njg5MzI3MTE.*_ga_GQH2V1F11Q*czE3NzAxMzM1MTEkbzgkZzEkdDE3NzAxMzM4OTgkajU1JGwwJGgw&bid=1770133905259" class="cta-primary">Quero transformar minha vibração ✨</a>
+    <a href="https://pay.hotmart.com/C104230289N?_gl=1*10mcbdk*_gcl_aw*R0NMLjE3NzAwNjEwMzMuQ2p3S0NBaUFzNEhNQmhCSkVpd0FDcmZOWlpRVXJwQjJNRmVWN1hkOUNiUER2WU0tQjM2MnhlY0IteE5ZcTNJMEVEZjlTWGdSZXpicGt4b0NvbzBRQXZEX0J3RQ..*_gcl_au*MTQ5Njk4OTY3NC4xNzY4OTMyNzExLjE4MDk3ODU4ODEuMTc2OTcyMDYxNi4xNzY5NzIwOTQx*FPAU*MTQ5Njk4OTY3NC4xNzY4OTMyNzEx*_ga*NTI4NzIzNDg4LjE3Njg5MzI3MTE.*_ga_GQH2V1F11Q*czE3NzAxMzM1MTEkbzgkZzEkdDE3NzAxMzM4OTgkajU1JGwwJGgw&bid=1770133905259" class="cta-primary">Quero começar meus 30 dias de transformação</a>
   </div>
 
   <script>
